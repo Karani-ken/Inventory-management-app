@@ -1,7 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser")
+const dotenv = require('dotenv').config();
 const cors = require("cors");
 const useRouter = require('./routes/userRoute')
+const db = require('./db/db')
 const app = express();
  const corsOptions = {
     origin:"http://localhost:3000"
@@ -14,8 +16,8 @@ const app = express();
  app.get('/',(req,res)=>{
         res.json({message:"welcome to fmis"});
  })
- const PORT = process.env.PORT  || 4000
- app.listen(PORT,()=>{
-    console.log(`server is running on port: ${PORT}`);
+ const port = process.env.PORT 
+ app.listen(port,()=>{
+    console.log(`server is running on port: ${port}`);
  })
- app.use('/api', useRouter)
+ app.use('/api', useRouter)  

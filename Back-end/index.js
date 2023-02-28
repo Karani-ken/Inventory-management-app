@@ -2,7 +2,8 @@ const express = require("express");
 const bodyParser = require("body-parser")
 const dotenv = require('dotenv').config();
 const cors = require("cors");
-const useRouter = require('./routes/userRoute')
+const userRouter = require('./routes/userRoute')
+const assetsRouter = require('./routes/assetsRoute')
 const db = require('./db/db')
 const app = express();
  const corsOptions = {
@@ -20,4 +21,5 @@ const app = express();
  app.listen(port,()=>{
     console.log(`server is running on port: ${port}`);
  })
- app.use('/api', useRouter)  
+ app.use('/api/users', userRouter)  
+ app.use('/api/assets', assetsRouter)

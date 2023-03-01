@@ -1,25 +1,29 @@
 const express = require('express');
 const router = express.Router();
+const {
+    getAssets,
+    addAsset,
+    updateAsset,
+    deleteAsset,
+}= require('../controllers/assetsController')
+
+const {protect} = require('../middleware/authMiddleware')
+
 
 //get assets
-router.get('/', (req,res)=>{
-    res.status(200).json({message:'Get assets'})
-})
+router.get('/', protect, getAssets)
+   
 
 //add assets
-router.post('/add', (req,res)=>{
-    res.status(200).json({message:'add assets'})
-})
+router.post('/add', protect, addAsset)
+  
 
 //update assets
-router.put('/update/:id', (req,res)=>{
-    res.status(200).json({message:`Update asset ${req.params.id}`})
-})
+router.put('/update/:id', protect, updateAsset )
+   
 
 //delete assets
-router.delete('/delete/:id', (req,res)=>{
-    res.status(200).json({message:`delete asset ${req.params.id}`})
-})
+router.delete('/delete/:id', protect, deleteAsset)
 
 module.exports = router
 

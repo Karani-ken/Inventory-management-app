@@ -6,11 +6,8 @@ const userRouter = require('./routes/userRoute')
 const assetsRouter = require('./routes/assetsRoute')
 const db = require('./db/db')
 const app = express();
- const corsOptions = {
-    origin:"http://localhost:3000"
- }
 
- app.use(cors(corsOptions));
+ app.use(cors());
  app.use(bodyParser.json());
  app.use(bodyParser.urlencoded({extended:true}))
 

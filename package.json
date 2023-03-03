@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon Back-end/index.js"
+    "start": "node Back-end/index.js",
+    "server":"nodemon Back-end/index.js",
+    "client": "npm start --prefix frontend"
+
+    
   },
   "keywords": [],
   "author": "",

@@ -27,7 +27,7 @@ const addAsset = asyncHandler (async (req,res)=>{
         value,
         description,
         user: req.user.id
-    })
+    })    
 
     res.status(200).json(asset)
 })

@@ -21,11 +21,18 @@ function Header() {
             </div>
             <ul>
                 {user ? (
+                    <>
                     <li>
                         <button className='btn' onClick={onLogout}>
                             <FaSignOutAlt /> Logout
                         </button>
-                    </li>) : (
+                    </li>
+                    <li className='flex'>
+                        <FaUser className='m-3'/> {user && user.name}
+                    </li>
+                    </>
+                    
+                    ) : (
                     <>
                          <li>
                             <Link to='/login'>

@@ -26,7 +26,28 @@ export const createAsset = createAsyncThunk('assets/add',async (assetData, thunk
         return thunkAPI.rejectWithValue(message)
     }
 })
+//Get user Assets
 
+export const getAssets = createAsyncThunk('assets/getAll', async (_,
+    thunkAPI) =>{
+        try {
+            const token = thunkAPI.getState().auth.user.token
+
+            return await assetService.getAssets(token)
+    
+            
+        } catch (error) {
+            const message = (
+                error.response
+                && error.response.data &&
+                error.response.data.message) ||
+                error.message ||
+                error.toString()
+    
+            return thunkAPI.rejectWithValue(message)
+            
+        }
+    })
 export const assetSlice = createSlice({
     name:'asset',
     initialState,
@@ -35,6 +56,7 @@ export const assetSlice = createSlice({
     },
     extraReducers: (builder)=>{
        builder
+       //create assets
         .addCase(createAsset.pending, (state) =>{
             state.isLoading = true
         })
@@ -44,6 +66,20 @@ export const assetSlice = createSlice({
             state.assets.push(action.payload)
         })
         .addCase(createAsset.rejected, (state, action) => {
+            state.isLoading =false
+            state.isError = true
+            state.message = action.payload
+        })
+        //get assets
+        .addCase(getAssets.pending, (state) =>{
+            state.isLoading = true
+        })
+        .addCase(getAssets.fulfilled, (state,action) => {
+            state.isLoading =false
+            state.isSuccess=true
+            state.assets= action.payload
+        })
+        .addCase(getAssets.rejected, (state, action) => {
             state.isLoading =false
             state.isError = true
             state.message = action.payload

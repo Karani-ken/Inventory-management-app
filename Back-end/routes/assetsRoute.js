@@ -11,7 +11,7 @@ const {protect} = require('../middleware/authMiddleware')
 
 
 //get assets
-router.get('/', protect, getAssets)
+router.get('/getAll', protect, getAssets)
    
 
 //add assets

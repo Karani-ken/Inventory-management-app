@@ -31,24 +31,24 @@ function Dashboard() {
       return  <Spinner/>
     }           
   return (
-   <>
-       <section className="w-full p-3 shadow-sm shadow-gray-700 bg-gray-500">
-        <h1 className=" font-black text-3xl">Welcome to Farmer's Dashboard</h1>
+   <div className="h-[80vh] overflow-auto ">
+       <section className="w-full p-1 md:p-3 shadow-sm shadow-gray-700 bg-gray-500 ">
+        <h1 className=" text-sm md:font-black md:text-3xl">Dashboard</h1>
         <div className="flex justify-around">
         <button className="bg-emerald-500 border-2 rounded-lg p-1 border-red-300" >
           <Link to='/addasset' >
             Add asset
           </Link>
-        </button>
-       
+        </button>       
        
         </div>
         
        </section>
        
-       <section className="content">
-          {assets.length > 0 ? (
-            <div className="goals">
+       <div className=' bg-gray-100'>
+        <h1 className="text-sm md:font-black md:text-3xl">All assets</h1>
+       {assets.length > 0 ? (
+            <div className="shadow-lg rounded-lg shadow-black p-3">
              
                   
                   < Table  assets={assets}/>
@@ -56,8 +56,11 @@ function Dashboard() {
           ) : (<h3> You have no assets</h3>)
           
         }
-       </section>
-   </>
+
+       </div>
+        
+       
+   </div>
   )
 }
 

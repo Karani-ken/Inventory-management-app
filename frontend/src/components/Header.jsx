@@ -17,20 +17,18 @@ function Header() {
     return (
         <header className='header'>
             <div className="logo">
-                <Link to='/' className='font-black text-2xl'>Farm Management system</Link>
+                <Link to='/' className='md:font-black md:text-2xl'>Farm Management system</Link>
             </div>
             <ul>
                 {user ? (
-                    <>
+                
                     <li>
-                        <button className='btn' onClick={onLogout}>
-                            <FaSignOutAlt /> Logout
+                        <button className='bg-black  text-white p-3 rounded-md' onClick={onLogout}>
+                            <FaSignOutAlt className='text-sm' /> Logout
                         </button>
                     </li>
-                    <li className='flex'>
-                        <FaUser className='m-3'/> {user && user.name}
-                    </li>
-                    </>
+                   
+                    
                     
                     ) : (
                     <>

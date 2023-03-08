@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import { useDispatch } from 'react-redux'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,Link} from 'react-router-dom'
 import {createAsset} from '../features/assets/assetSlice'
 function AssetForm() {
   const [formData, setFormData]= useState({
@@ -37,7 +37,8 @@ function AssetForm() {
         
     }
   return (
-    <section className='w-[700px] m-5 p-5 shadow-md shadow-green-400'>
+    <div className='min-h-screen flex items-center justify-center'>
+    <section className='w-[700px] m-5 p-5 shadow-md shadow-green-400 flex justify-center items-center'>
     <form onSubmit={onSubmit}>
       <div className='form-group'>
         <label htmlFor='text'>Asset</label>
@@ -88,9 +89,16 @@ function AssetForm() {
         <button className='btn btn-block' type='submit'>
           Add Asset
         </button>
+        <button className='btn btn-block'>
+          <Link to='/' className='text-white'>
+            Back
+          </Link>
+          
+        </button>
       </div>
     </form>
   </section>
+  </div>
   )
 }
 

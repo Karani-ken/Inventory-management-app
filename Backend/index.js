@@ -19,13 +19,13 @@ const app = express();
  app.use('/api/assets', assetsRouter)      
  
  //serve
- if(process.env.NODE_ENV === 'production'){
+ /*if(process.env.NODE_ENV === 'production'){
    app.use(express.static(path.join(__dirname, '../frontend/build')))
    app.get('*', (req,res)=> res.sendFile(__dirname,'../','frontend','build',
    'index.html'))
  }else{
    app.get('/',(req, res)=> res.send('please set to production'))
- }
+ }*/
  app.listen(port,()=>{   
    console.log(`server is running on port: ${port}`);
 })

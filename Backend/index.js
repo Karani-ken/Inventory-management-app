@@ -16,7 +16,7 @@ const app = express();
  const port = process.env.PORT 
 
  app.use('/api/users', userRouter)  
- app.use('/api/assets', assetsRouter)  
+ app.use('/api/assets', assetsRouter)      
  
  //serve
  if(process.env.NODE_ENV === 'production'){

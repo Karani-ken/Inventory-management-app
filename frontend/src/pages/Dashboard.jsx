@@ -1,10 +1,11 @@
 import { useEffect } from "react"
-import {useNavigate} from 'react-router-dom'
+import {useNavigate,Link} from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
 import AssetForm from "../components/AssetForm"
-import AssetItem from "../components/AssetItem"
+
 import Spinner from '../components/Spinner'
 import { getAssets, reset } from "../features/assets/assetSlice"
+import Table from "../components/Table"
 
 function Dashboard() {
   const navigate = useNavigate()
@@ -31,17 +32,32 @@ function Dashboard() {
     }           
   return (
    <>
-       <section className="w-full bg-emerald-100 p-3">
+       <section className="w-full p-3">
         <h1>Welcome to Farmer's Dashboard</h1>
+        <div className="flex justify-around">
+        <button>
+          <Link to='/addasset'>
+            Add asset
+          </Link>
+        </button>
+        <button>
+          <Link to='/addasset'>
+            Edit asset
+          </Link>
+        </button>
+        <button>
+         Delete asset
+        </button>
+        </div>
+        
        </section>
-       <AssetForm/>
+       
        <section className="content">
           {assets.length > 0 ? (
             <div className="goals">
-              { assets.map((asset) =>{
-                return < AssetItem key={asset._id}/>
-              })
-              }
+             
+                  
+                  < Table  assets={assets}/>
             </div>
           ) : (<h3> You have no assets</h3>)
           

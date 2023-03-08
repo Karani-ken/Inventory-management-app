@@ -15,7 +15,7 @@ const getAssets = asyncHandler ( async (req,res)=>{
 //@route POST /api/assets
 //@access Private
 const addAsset = asyncHandler (async (req,res)=>{
-    const {name, value,description} = req.body
+    const {name, value,type,description} = req.body
 
     if(!name || !value || !description){
         res.status(400)
@@ -25,6 +25,7 @@ const addAsset = asyncHandler (async (req,res)=>{
     const asset = await Asset.create({
         name,
         value,
+        type,
         description,
         user: req.user.id
     })    

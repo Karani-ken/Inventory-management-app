@@ -14,6 +14,10 @@ const assetSchema = mongoose.Schema({
         type: String,
         required:[true, 'please add the price']
     },
+    type:{
+        type: String,
+        required:[true, 'please add the price']
+    },
     description:{
         type:String,
         required:[true, 'please ass the description']

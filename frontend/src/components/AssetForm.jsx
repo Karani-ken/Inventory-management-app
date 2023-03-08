@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import { useDispatch } from 'react-redux'
+import {useNavigate} from 'react-router-dom'
 import {createAsset} from '../features/assets/assetSlice'
 function AssetForm() {
   const [formData, setFormData]= useState({
@@ -8,8 +9,10 @@ function AssetForm() {
     type:'',
     description:''
   })
+  const [message, setMessage] = useState('')
   const {name, value,type,description} = formData
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const onChange = (e) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -26,7 +29,9 @@ function AssetForm() {
           type,
           description
         }
-        dispatch(createAsset(Asset))
+        dispatch(createAsset(Asset))        
+        setMessage("Added Successfully")
+        navigate('/')
         
     }
   return (
@@ -34,6 +39,7 @@ function AssetForm() {
     <form onSubmit={onSubmit}>
       <div className='form-group'>
         <label htmlFor='text'>Asset</label>
+        <p text>{message}</p>
         <input
           type='text'
           name='name'

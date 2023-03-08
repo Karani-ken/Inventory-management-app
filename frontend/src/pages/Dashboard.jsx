@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import {useNavigate,Link} from 'react-router-dom'
 import {useSelector,useDispatch} from 'react-redux'
-import AssetForm from "../components/AssetForm"
+
 
 import Spinner from '../components/Spinner'
 import { getAssets, reset } from "../features/assets/assetSlice"
@@ -32,19 +32,15 @@ function Dashboard() {
     }           
   return (
    <>
-       <section className="w-full p-3 shadow-sm shadow-blue-700">
-        <h1>Welcome to Farmer's Dashboard</h1>
+       <section className="w-full p-3 shadow-sm shadow-gray-700 bg-gray-500">
+        <h1 className=" font-black text-3xl">Welcome to Farmer's Dashboard</h1>
         <div className="flex justify-around">
-        <button>
-          <Link to='/addasset'>
+        <button className="bg-emerald-500 border-2 rounded-lg p-1 border-red-300" >
+          <Link to='/addasset' >
             Add asset
           </Link>
         </button>
-        <button>
-          <Link to='/addasset'>
-            Edit asset
-          </Link>
-        </button>
+       
        
         </div>
         

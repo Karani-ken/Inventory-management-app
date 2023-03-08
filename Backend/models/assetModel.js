@@ -12,7 +12,7 @@ const assetSchema = mongoose.Schema({
     },
     value:{
         type: String,
-        required:[true, 'please add the price']
+        required:[true, 'please add the price']      
     },
     type:{
         type: String,
@@ -20,7 +20,12 @@ const assetSchema = mongoose.Schema({
     },
     description:{
         type:String,
-        required:[true, 'please ass the description']
+        required:[true, 'please add the description']
+    }
+    ,
+    quantity:{
+        type:String,
+        required:[true, 'please add the quantity']
     }
 },{
     timestamps: true

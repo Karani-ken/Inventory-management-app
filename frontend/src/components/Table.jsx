@@ -12,7 +12,9 @@ function Table({assets}) {
                 <th className='p-3 text-sm font-semibold tracking-wide text-left'>Value</th>
                 <th className='p-3 text-sm font-semibold tracking-wide text-left'>Type</th>
                 <th className='p-3 text-sm font-semibold tracking-wide text-left'>Description</th>
+                <th className='p-3 text-sm font-semibold tracking-wide text-left'>Quantity</th>
                 <th className='p-3 text-sm font-semibold tracking-wide text-left'>Date Added</th>
+                <th className='p-3 text-sm font-semibold tracking-wide text-left'>Action</th>
             </tr>
         </thead>
         <tbody>

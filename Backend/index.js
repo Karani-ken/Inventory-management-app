@@ -5,11 +5,11 @@ const cors = require("cors");
 const userRouter = require('./routes/userRoute')
 const assetsRouter = require('./routes/assetsRoute')
 const db = require('./db/db')
-const app = express();
-
+const app = express();   
+          
  app.use(cors());
  app.use(bodyParser.json());
- app.use(bodyParser.urlencoded({extended:true}))
+ app.use(bodyParser.urlencoded({extended:true}))    
 
  
  const port = process.env.PORT 

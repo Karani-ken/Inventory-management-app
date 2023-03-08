@@ -2,6 +2,7 @@
 
  const API_URL1 ='http://localhost:5000/api/assets/add'
  const API_URL2 ='http://localhost:5000/api/assets/getAll'
+ const API_URL3='http://localhost:5000/api/assets/delete/'
 
  //create asset
 
@@ -28,9 +29,23 @@
     
     return response.data
  }
+ //delete asset
+ const deleteAsset = async (assetId,token)=>{
+    const config = {
+        headers:{
+            Authorization: `Bearer ${token}`
+        }
+    }
+    const response = await axios.delete(API_URL3 + assetId, config)
+     
+    
+    return response.data
+ }
+
 
  const assetService ={
     createAsset,
-    getAssets
+    getAssets,
+    deleteAsset
  }
  export default assetService

@@ -15,9 +15,9 @@ const getAssets = asyncHandler ( async (req,res)=>{
 //@route POST /api/assets
 //@access Private
 const addAsset = asyncHandler (async (req,res)=>{
-    const {name, value,type,description} = req.body
+    const {name, value,type,description,quantity} = req.body
 
-    if(!name || !value || !description){
+    if(!name || !value || !type ||!description || !quantity){
         res.status(400)
         throw new Error('All fields are required')
     }
@@ -27,6 +27,7 @@ const addAsset = asyncHandler (async (req,res)=>{
         value,
         type,
         description,
+        quantity,
         user: req.user.id
     })    
 

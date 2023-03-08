@@ -7,10 +7,11 @@ function AssetForm() {
     name:'',
     value:'',
     type:'',
-    description:''
+    description:'',
+    quantity:''
   })
   const [message, setMessage] = useState('')
-  const {name, value,type,description} = formData
+  const {name, value,type,description,quantity} = formData
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const onChange = (e) => {
@@ -27,7 +28,8 @@ function AssetForm() {
           name,
           value,
           type,
-          description
+          description,
+          quantity
         }
         dispatch(createAsset(Asset))        
         setMessage("Added Successfully")
@@ -72,6 +74,14 @@ function AssetForm() {
           value={description}
           onChange={onChange} 
           placeholder="asset description"
+        />
+        <input
+          type='number'
+          name='quantity'
+          id='quantity'
+          value={quantity}
+          onChange={onChange} 
+          placeholder="asset quantity"
         />
       </div>
       <div className='form-group'>

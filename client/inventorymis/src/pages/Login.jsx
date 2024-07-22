@@ -59,7 +59,7 @@ function Login() {
         <h1>
           <FaSignInAlt/> Login
         </h1>
-        <p>Login and start your farm profile</p>
+        <p>Login and start your  profile</p>
       </section>
       <section className="form">
         <form onSubmit={onSubmit}>

@@ -17,7 +17,7 @@ function Header() {
     return (
         <header className='header'>
             <div className="logo">
-                <Link to='/' className='md:font-black md:text-2xl'>Farm Management system</Link>
+                <Link to='/' className='md:font-black md:text-2xl'>Inventory Management system</Link>
             </div>
             <ul>
                 {user ? (

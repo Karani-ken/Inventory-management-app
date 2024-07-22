@@ -8,9 +8,9 @@ function Footer() {
       <div className='m-2 md:m-5 p-5 text-left'>
          <h1 className='text-xl font-black'>Contacts</h1>
          <ul>
-           <li className='text-pink-700 m-2'>phone: +254755995669 or +254713801284</li>
+           <li className='text-pink-700 m-2'>phone: 0712345678</li>
            <li className='text-pink-700 m-2'>location: Nyeri Town</li>
-           <li className='text-pink-700 m-2'>email: kenneth0karani@gmail.com</li>
+           <li className='text-pink-700 m-2'>email: example@gmail.com</li>
          </ul>
       </div>
       <div className='m-2 md:m-5 p-5 text-left'>
@@ -29,11 +29,11 @@ function Footer() {
         <h1 className='text-xl  font-black'>Social media platforms</h1>
         <ul>
           <li className='flex text-center m-2'>{<Icons.Facebook style={{fontSize:'40px'}} 
-          className="bg-blue-700 rounded-xl"/>} <h3 className='p-2'>Kenneth karani</h3></li>
+          className="bg-blue-700 rounded-xl"/>} <h3 className='p-2'>Inve_MIS</h3></li>
           <li className='flex text-center m-2'>{<Icons.Instagram style={{fontSize:'40px'}}
-          className='bg-pink-500 rounded-xl'/>} <h3 className='p-2'> @_iam_suspect </h3></li>
+          className='bg-pink-500 rounded-xl'/>} <h3 className='p-2'> @inve_T_mis </h3></li>
           <li className='flex text-center m-2'>{<Icons.Twitter style={{fontSize:'40px'}}
-          className='bg-blue-500 rounded-xl'/>} <h3 className='p-2'> @Karaniken_01 </h3></li>
+          className='bg-blue-500 rounded-xl'/>} <h3 className='p-2'> @invet006 </h3></li>
           
         
 
@@ -45,7 +45,7 @@ function Footer() {
         
 
     </div>
-    <p className='bg-gray-700 text-white font-black'>&#169; Karani-ken All Rights Reserved</p>
+    <p className='bg-gray-700 text-white font-black'>&#169;  All Rights Reserved</p>
   </div>
 
     </>
